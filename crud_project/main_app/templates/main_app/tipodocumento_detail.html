@@ -1,0 +1,10 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'main_app/styles.css' %}">
+<div class="container">
+    <h1>{{ tipodocumento.nombre }}</h1>
+    <p>{{ tipodocumento.descripcion }}</p>
+    <a href="{% url 'tipodocumento_update' tipodocumento.pk %}">Editar</a>
+    <a href="{% url 'tipodocumento_delete' tipodocumento.pk %}">Eliminar</a>
+    <a href="{% url 'tipodocumento_list' %}">Volver a la lista</a>
+</div>
+

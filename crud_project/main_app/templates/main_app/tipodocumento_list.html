@@ -1,0 +1,16 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'main_app/styles.css' %}">
+<div class="container">
+    <h1>Lista de Tipos de Documentos</h1>
+    <a href="{% url 'tipodocumento_create' %}">Crear nuevo tipo de documento</a>
+    <ul>
+    {% for tipodocumento in tipodocumentos %}
+        <li>
+            <a href="{% url 'tipodocumento_detail' tipodocumento.pk %}">{{ tipodocumento.nombre }}</a>
+            <a href="{% url 'tipodocumento_update' tipodocumento.pk %}">Editar</a>
+            <a href="{% url 'tipodocumento_delete' tipodocumento.pk %}">Eliminar</a>
+        </li>
+    {% endfor %}
+    </ul>
+</div>
+

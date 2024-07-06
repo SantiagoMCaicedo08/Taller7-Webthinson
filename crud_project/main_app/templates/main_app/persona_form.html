@@ -1,0 +1,11 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'main_app/styles.css' %}">
+<div class="container">
+    <h1>Nueva Persona</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar</button>
+    </form>
+    <a href="{% url 'index' %}">Cancelar</a>
+</div>

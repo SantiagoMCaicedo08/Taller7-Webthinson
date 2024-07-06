@@ -1,0 +1,26 @@
+[
+    {
+        "model": "main_app.ciudad",
+        "pk": 1,
+        "fields": {
+            "nombre": "Ciudad 1",
+            "descripcion": "Descripción de Ciudad 1"
+        }
+    },
+    {
+        "model": "main_app.ciudad",
+        "pk": 2,
+        "fields": {
+            "nombre": "Ciudad 2",
+            "descripcion": "Descripción de Ciudad 2"
+        }
+    },
+    {
+        "model": "main_app.ciudad",
+        "pk": 3,
+        "fields": {
+            "nombre": "Ciudad 3",
+            "descripcion": "Descripción de Ciudad 3"
+        }
+    }
+]

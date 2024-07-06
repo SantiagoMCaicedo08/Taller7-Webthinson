@@ -1,0 +1,13 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'main_app/styles.css' %}">
+<div class="container">
+    <h1>Lista de Personas</h1>
+    <a href="{% url 'persona_create' %}">Crear nueva persona</a>
+    <ul>
+    {% for persona in personas %}
+        <li>
+            <a href="{% url 'persona_detail' persona.pk %}">{{ persona.nombres }} {{ persona.apellidos }}</a>
+        </li>
+    {% endfor %}
+    </ul>
+</div>

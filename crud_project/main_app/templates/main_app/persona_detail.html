@@ -1,0 +1,23 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'main_app/styles.css' %}">
+<div class="container">
+    <h1>{{ persona.nombres }} {{ persona.apellidos }}</h1>
+    <p>Documento: {{ persona.documento }}</p>
+    <p>Lugar de residencia: {{ persona.lugarresidencia.nombre }}</p>
+    <p>Fecha de nacimiento: {{ persona.fechanacimiento }}</p>
+    <p>Email: {{ persona.email }}</p>
+    <p>Teléfono: {{ persona.telefono }}</p>
+    <p>Usuario: {{ persona.usuario }}</p>
+    
+    {% if persona.tipodocumento %}
+        <h2>Tipo de Documento</h2>
+        <p>Nombre: {{ persona.tipodocumento.nombre }}</p>
+        <p>Descripción: {{ persona.tipodocumento.descripcion }}</p>
+        <a href="{% url 'tipodocumento_update' persona.pk %}">Editar Tipo de Documento</a>
+        <a href="{% url 'tipodocumento_delete' persona.pk %}">Eliminar Tipo de Documento</a>
+    {% else %}
+        <a href="{% url 'tipodocumento_create' persona.pk %}">Añadir Tipo de Documento</a>
+    {% endif %}
+    
+    <a href="{% url 'index' %}">Volver a la lista</a>
+</div>
